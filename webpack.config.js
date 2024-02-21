@@ -16,7 +16,7 @@ module.exports = {
   devtool: 'source-map',
   optimization: optimization,
   entry: './index.js',
-  mode: 'production',
+  mode: 'development',
   output: {
     filename: fileName + '.js',
     path: path.join(__dirname, 'dist'),
