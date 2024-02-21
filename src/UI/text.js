@@ -26,14 +26,14 @@ function handleDocumentMouseup(e) {
   // }
   input = document.createElement('textarea');
   input.setAttribute('id', 'pdf-annotate-text-input');
-  input.setAttribute('placeholder', 'Enter text... SHIFT + ENTER for new line');
+  input.setAttribute('placeholder', 'テキストを入力してください');
   input.style.border = `3px solid ${BORDER_COLOR}`;
   input.style.borderRadius = '3px';
   input.style.position = 'absolute';
   input.style.top = `${e.clientY}px`;
   input.style.left = `${e.clientX}px`;
   input.style.fontSize = `${_textSize}px`;
-  input.style.zIndex = '41';
+  input.style.zIndex = '9999';
   input.addEventListener('blur', handleInputBlur);
   input.addEventListener('keyup', handleInputKeyup);
 

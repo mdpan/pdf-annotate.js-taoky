@@ -56,6 +56,8 @@ const SORT_TYPES = {
   'drawing': sortByLinePoint,
   'textbox': sortByPoint,
   'point': sortByPoint,
-  'area': sortByPoint
+  'area': sortByPoint,
+  'sign': sortByPoint,
+  'signimg': sortByPoint
 };
 
