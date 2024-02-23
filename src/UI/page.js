@@ -89,7 +89,18 @@ export function renderPage(pageNumber, renderOptions) {
           let eventBus = getGlobalEventBus();
           let textLayer = page.querySelector(config.textClassQuery());
           let textLayerFactory = new pdfjsViewer.DefaultTextLayerFactory();
-          let textLayerBuilder = textLayerFactory.createTextLayerBuilder(textLayer, pageNumber - 1, viewport, true, eventBus);
+          let textLayerBuilder = textLayerFactory.createTextLayerBuilder(
+            {
+              textLayerDiv: textLayer,
+              pageIndex: pageNumber - 1,
+              viewport:viewport,
+              enhanceTextSelection : true,
+              eventBus:eventBus,
+              highlighter:null,
+              accessibilityManager : null
+            }
+          );
+
           textLayerBuilder.setTextContent(textContent);
           textLayerBuilder.render();
 
