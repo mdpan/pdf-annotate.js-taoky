@@ -501,4 +501,6 @@ render();
 
   UI.setArrow(10, 'darkgoldenrod');
   UI.setCircle(10, 'darkgoldenrod');
+
+  UI.setPoint('#aaaaaa', 'sdfsdf:');
 })(window, document);

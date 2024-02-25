@@ -10,6 +10,7 @@ import {
 let _enabled = false;
 let input;
 let _pointColor = '#fff9c7';
+let _defaultPointText = '';
 
 /**
  * Handle document.mouseup event
@@ -46,15 +47,11 @@ function handleDocumentMouseup(e) {
   input.style.background = _pointColor;
   input.style.width = '275px';
   input.rows = 5;
-
-  if ($("#ShowUserNameInComment").val() === "1") {
-    input.value = $("#UserName").val() + ": \r\n";
-  }
+  input.value = _defaultPointText;
 
   input.addEventListener('blur', handleInputBlur);
   //20210209
   //input.addEventListener('keyup', handleInputKeyup);
-
 
   document.body.appendChild(input);
   input.focus();
@@ -133,10 +130,12 @@ function closeInput() {
 /**
  * Set the attributes of the point.
  *	 
-  * @param {String} pointColor the background color 
-  */
-  export function setPoint() {
-  _pointColor = arguments.length <= 0 || arguments[0] === undefined ? '#fff9c7' : arguments[0];
+ * @param {String} pointColor the background color  
+ * @param {String} defaultPointText The default text of point
+ */
+export function setPoint(pointColor = '#fff9c7', defaultPointText = '') {
+  _pointColor = pointColor;
+  _defaultPointText = defaultPointText;
 }
 
 /**
